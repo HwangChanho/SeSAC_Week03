@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gcK-pu-tma">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jvl-KO-LZR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -26,7 +26,7 @@
         <!--Memo Table View Controller-->
         <scene sceneID="dNt-IC-WhL">
             <objects>
-                <tableViewController id="UG0-A4-3wI" userLabel="Memo Table View Controller" customClass="TableViewController" customModule="SeSAC_Week03" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TableViewController" id="UG0-A4-3wI" userLabel="Memo Table View Controller" customClass="TableViewController" customModule="SeSAC_Week03" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="roc-3b-a5o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,7 +121,7 @@
         <!--Box Office Tabel View Controller-->
         <scene sceneID="9zZ-gm-bkP">
             <objects>
-                <tableViewController id="q6i-l4-adw" customClass="BoxOfficeTabelViewController" customModule="SeSAC_Week03" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BoxOfficeTabelViewController" id="q6i-l4-adw" customClass="BoxOfficeTabelViewController" customModule="SeSAC_Week03" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="hRr-vJ-DfV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -498,6 +498,95 @@
             </objects>
             <point key="canvasLocation" x="1186.9565217391305" y="1242.8571428571429"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="fD2-9K-LJm">
+            <objects>
+                <viewController id="Ux5-z8-UJg" customClass="ViewController" customModule="SeSAC_Week03" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tGM-uT-3L8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k95-Vc-pZt">
+                                <rect key="frame" x="10" y="128" width="394" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="g1o-qr-NPP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Memo"/>
+                                <connections>
+                                    <action selector="memoButtonClicked:" destination="Ux5-z8-UJg" eventType="touchUpInside" id="FBr-Re-sxS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="080-DO-LDx">
+                                <rect key="frame" x="10" y="208" width="394" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xl4-ha-9nS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="BoxOffice"/>
+                                <connections>
+                                    <action selector="boxOfficeButtonClicked:" destination="Ux5-z8-UJg" eventType="touchUpInside" id="Qfw-X8-YXu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LTO-Zm-iDi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="080-DO-LDx" firstAttribute="leading" secondItem="LTO-Zm-iDi" secondAttribute="leading" constant="10" id="2YO-SK-tpF"/>
+                            <constraint firstItem="LTO-Zm-iDi" firstAttribute="trailing" secondItem="080-DO-LDx" secondAttribute="trailing" constant="10" id="I3b-UB-gti"/>
+                            <constraint firstItem="k95-Vc-pZt" firstAttribute="top" secondItem="LTO-Zm-iDi" secondAttribute="top" constant="40" id="OwI-yG-9bb"/>
+                            <constraint firstItem="080-DO-LDx" firstAttribute="top" secondItem="k95-Vc-pZt" secondAttribute="bottom" constant="40" id="PU1-0L-Oyt"/>
+                            <constraint firstItem="k95-Vc-pZt" firstAttribute="leading" secondItem="LTO-Zm-iDi" secondAttribute="leading" constant="10" id="bIK-t0-5Ui"/>
+                            <constraint firstItem="LTO-Zm-iDi" firstAttribute="trailing" secondItem="k95-Vc-pZt" secondAttribute="trailing" constant="10" id="fBo-oU-SCV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VIz-RR-M6h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sCr-2O-Bz4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2084.057971014493" y="1899.7767857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0Hk-CC-y0f">
+            <objects>
+                <viewController id="X8Y-2b-l26" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qXN-0p-2Zc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="En4-xL-Z0F">
+                                <rect key="frame" x="10" y="84" width="394" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="aT1-dV-0ij"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Memo"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TsD-gA-su9">
+                                <rect key="frame" x="10" y="164" width="394" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cYa-fJ-LFN"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="BoxOffice"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="weW-07-iTE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="weW-07-iTE" firstAttribute="trailing" secondItem="En4-xL-Z0F" secondAttribute="trailing" constant="10" id="B5O-Da-s6v"/>
+                            <constraint firstItem="En4-xL-Z0F" firstAttribute="top" secondItem="weW-07-iTE" secondAttribute="top" constant="40" id="Nlx-hC-5RW"/>
+                            <constraint firstItem="TsD-gA-su9" firstAttribute="top" secondItem="En4-xL-Z0F" secondAttribute="bottom" constant="40" id="RqI-Qf-mfK"/>
+                            <constraint firstItem="TsD-gA-su9" firstAttribute="leading" secondItem="weW-07-iTE" secondAttribute="leading" constant="10" id="kAu-Pl-hVD"/>
+                            <constraint firstItem="En4-xL-Z0F" firstAttribute="leading" secondItem="weW-07-iTE" secondAttribute="leading" constant="10" id="yj6-yf-vGy"/>
+                            <constraint firstItem="weW-07-iTE" firstAttribute="trailing" secondItem="TsD-gA-su9" secondAttribute="trailing" constant="10" id="zgl-pV-ADC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85S-9C-9Rj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2800" y="1899.7767857142856"/>
+        </scene>
         <!--Set Table View Controller-->
         <scene sceneID="Id5-9P-rV4">
             <objects>
@@ -732,6 +821,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMV-bl-Q25" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1909" y="-106"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TRu-BQ-oPb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jvl-KO-LZR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5WW-4A-rg7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ux5-z8-UJg" kind="relationship" relationship="rootViewController" id="qY6-LH-KYk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Pz-6Z-NQC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1173.913043478261" y="1899.7767857142856"/>
         </scene>
     </scenes>
     <resources>

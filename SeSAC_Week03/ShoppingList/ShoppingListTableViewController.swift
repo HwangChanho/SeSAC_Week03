@@ -26,7 +26,6 @@ class ShoppingListTableViewController: UITableViewController, ShoppingListTableV
         }
         saveData()
     }
-    // let menuList = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 최저가 알아보기", "양말"]
     
     var list: [ListInfo] = [ListInfo]() {
         didSet {
@@ -155,6 +154,10 @@ class ShoppingListTableViewController: UITableViewController, ShoppingListTableV
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let bounds = UIScreen.main.bounds // 글자 제한용
+        let width = bounds.width
+        
         tableView.backgroundColor = .white
         
         // 타입 캐스팅
@@ -179,6 +182,7 @@ class ShoppingListTableViewController: UITableViewController, ShoppingListTableV
         cell.textShowLabel.textColor = .black
         cell.textShowLabel.font = .systemFont(ofSize: 10)
         cell.textShowLabel.sizeToFit()
+        cell.textShowLabel.preferredMaxLayoutWidth = width - 110
         
         if row.favourite == true {
             cell.favouriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
@@ -188,14 +192,22 @@ class ShoppingListTableViewController: UITableViewController, ShoppingListTableV
         cell.favouriteButton.setTitle("", for: .normal)
         cell.favouriteButton.tintColor = .black
         
-        cell.accessoryType = .disclosureIndicator
-        
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UIScreen.main.bounds.height / 16
+    // 셀의 높이 동적으로 설정
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        tableView.estimatedRowHeight = 50
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        return tableView.rowHeight
     }
+    
+    // 셀의 높이 설정
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UIScreen.main.bounds.height / 16
+//    }
     
     // 셀의 편집상태 관리 (on/off 여부): canEditRowAt
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -212,13 +224,6 @@ class ShoppingListTableViewController: UITableViewController, ShoppingListTableV
         }
         
         saveData()
-    }
-    
-    // 특정 row 클릭시 액션
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 && indexPath.row == 3 {
-            performSegue(withIdentifier: "SetTable", sender: nil)
-        }
     }
 }
 

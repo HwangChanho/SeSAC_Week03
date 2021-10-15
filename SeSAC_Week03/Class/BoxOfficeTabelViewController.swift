@@ -42,5 +42,19 @@ class BoxOfficeTabelViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height / 7
     }
+    
+    // sell clicked action
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Movie", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: "BoxOfficeDetailViewController") as? BoxOfficeDetailViewController else {
+            print("ERROR")
+            return
+        }
+        
+        // let vc = sb.instantiateViewController(withIdentifier: "BoxOfficeDetailViewController") as! BoxOfficeDetailViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
